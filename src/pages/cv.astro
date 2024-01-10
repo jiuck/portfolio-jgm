@@ -1,0 +1,143 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import jgmImage from '../assets/jgm.jpeg';
+import Title from '../components/Title.astro';
+import Skills from '../components/Skills.astro';
+import WorkExperiences from '../components/WorkExperiences.astro';
+---
+
+<Layout title="Jose Gomez CV, curriculum">
+    <main class="flex flex-row">
+        <section id="sidebar" class="w-2/6 flex flex-col items-center bg-sky-950 ">
+            <Image 
+                src={jgmImage} 
+                alt="Jose gomez martinez portrait image cv" 
+                class="w-4/6 border-8 border-yellow-300 rounded-full"
+            />
+            <section id="summary">
+                <Title 
+                    title="SUMMARY" icon="fa-regular fa-user" 
+                />
+                <p class="mx-4 mb-4 px-4 pb-2 tracking-wider">
+                    I am a seasoned computer engineer specializing in web development, with over 7 years of professional experience. My journey began with the creation of my first website, and since then, I have led diverse and complex web projects, consistently enhancing my expertise. I am particularly energized by teamwork and the use of AI and ML technologies to develop tools that not only improve work efficiency but also significantly enhance user experiences.
+                </p>
+            </section>
+            <section id="skills" class="w-full">
+                <Title 
+                    title="skills" icon="fa-solid fa-chart-pie" 
+                />
+                <Skills
+                    skillList={[
+                        { "name": "Django", "rate": 9 },
+                        { "name": "Project Management", "rate": 9 },
+                        { "name": "Team Lead and Mentoring", "rate": 9 },
+                        { "name": "React, Next.js", "rate": 8 },
+                        { "name": "Agile Development", "rate": 8 },
+                        { "name": "Python", "rate": 8 },
+                        { "name": "ML and AI Integration", "rate": 8 },
+                        { "name": "Cloud Arch and Opt", "rate": 7 },
+                        { "name": "DB Management", "rate": 7 },
+                        { "name": "Blockchain Technology", "rate": 7 },
+                        { "name": "AWS", "rate": 7 }
+                    ]}
+                >
+            </section>
+        </section>
+        <section id="main" class="w-4/6">
+            <section id="cv-header" class="flex flex-row justify-between mx-4 my-16">
+                <div id="cv-title">
+                    <h1 class="text-4xl font-bold">Jose Gomez Martinez</h1>
+                    <subtitle>Computer Engineer from Barcelona</subtitle>
+                </div>
+                <div id="info">
+                    <h4>
+                        <a href="https://www.linkedin.com/in/jose-gomez-martinez-90a31160/">Linkedin Link</a></h4>
+                </div>
+            </section>
+            <section id="working-experience">
+                <Title 
+                    title="Work Experience" icon="fa-solid fa-laptop-code" 
+                />
+                <div class="mx-4 mb-4 px-4 pb-2 tracking-wider">
+                   <WorkExperiences experienceList={[
+                    {
+                        date: '2021/11 - present',
+                        position: 'Head of Engineering',
+                        company: 'Eterlast',
+                        location: 'Barcelona, Spain',
+                        description: [
+'I Worked with Immutable X L2 and Ethereum crypto environments',
+'Architected and built a comprehensive cloud and database environment, incorporating proprietary and open-source internal tools (back) and public-facing websites.',
+'Created internal tools for the planning and creation of NFT collections.',
+'Developed a large template-based web platform as a foundation for subsequent product development.',
+'Managed multiple teams of in-house and outsourced programmers.',
+'Oversaw product management, coordinating between programmers and other department heads.',
+'Plan and execute the security and IT entire operations. HW and SW provisioning, user administration, VPN, security analysis, testing, etc',
+'Created and managed the engineering ways to work, like how to deploy in production using Rolling Releases or how to use correctly Git.',
+'All of this was built using AWS, Django, Next.js, React, Postgre SQL, Docker, and K8s',
+                    ],
+                    },{
+                        date: '2019-11 - 2021-04',
+                        position: 'Lead Web Developer',
+                        company: 'Boston Consulting Group (BCG)',
+                        location: 'Barcelona, Spain',
+                        description: [
+'I worked on 7+ different projects both managing and hands-on:',
+'',
+'**Project Paper**',
+'- I built an app for quality checks at a slaughterhouse company.',
+'- The app can generate hundreds of different forms for use at various locations.',
+'- Over 2000 workers use the app at 47 different sites.',
+'- The app was built using React, Django, and PostgreSQL.',
+'',
+'**Project Operator**',
+'- Created a website to track customer data and spending.',
+'- Added gamification to the site to make it more enjoyable for telemarketers.',
+'- About 2000 employees use the site.',
+'- The site was built using React, Django, and PostgreSQL.',
+'',
+'**Other Projects**',
+'- Built a site for analyzing global transport impacts of major events like COVID-19 or ,the Suez Canal blockage with ML models.',
+'- Built a web tool with price analysis features for vendor audits, that saved millions.',
+'- Developed a global web solution for managing infant food production processes, increasing productivity around all their factories.',
+'- Created a web app for managing ML analysis of seafloor samples for oil exploration.',
+'- Created a web app for refinery management.',
+                    ],
+                    },{
+                        date: '2016/05 - 2019-11',
+                        position: 'Lead Web Developer',
+                        company: 'Kernel Analytics',
+                        location: 'Barcelona, Spain',
+                        description: [
+'- Led a team of 5 full-stack web developers and a designer.',
+'- Participated in and oversaw the creation of approximately 40 websites, all of which interacted seamlessly with underlying ML models, while effectively presenting analyses, changes, and advice for optimal usage.',
+'- During this period, we created highly visual tools, such as map-based servers, and worked with market, consumer, medical, telecommunication infrastructure, and gas analysis dashboards.',
+'- All these websites were built using a template made by us that we later utilized for all web page creations. This significantly saved time and improved quality, while also enhancing programmer satisfaction through code reusability.',
+                    ],
+                    },
+                   ]}/>
+                </div>
+            </section>
+            <section id="education">
+                <Title 
+                    title="Education" icon="fa-solid fa-building-columns" 
+                />
+                <div class="mx-4 mb-4 px-4 pb-2 tracking-wider">
+                    <div class="flex flex-row items-baseline gap-2">
+                        <h4 class="text-2xl font-bold">UIB - Universitat de les Illes Balears</h4>
+                        <subtitle class="text-xs">(2005-2012)</subtitle>
+                    </div>
+                    <p>Computer Systems Engineer, Computer Engineering</p>
+                </div>
+                <div class="mx-4 mb-4 px-4 pb-2 tracking-wider">
+                    <div class="flex flex-row items-baseline gap-2">
+                        <h4 class="text-2xl font-bold">UB - Universitat de Barcelona</h4>
+                        <subtitle class="text-xs">(2010-2011)</subtitle>
+                    </div>
+                    <p>Computer Engineering, SENECA scholarship</p>
+                </div>
+            </section>
+        </section>
+	</main>
+</Layout> 

@@ -1,0 +1,32 @@
+---
+interface Props {
+	skillList: Skill[];
+}
+interface Skill {
+    name: string;
+    rate: number;
+}
+
+const { skillList } = Astro.props;
+---
+{
+    skillList.map((skill) => {
+        const fillMap = new Array(10).fill(0);
+        return (
+            <div class="mx-4 mb-4 px-4 pb-2 flex flex-col w-full">
+                <div class="flex flex-wrap gap-3 content-around">
+                    <h3>{skill.name}</h3>
+                    <p>{skill.rate}</p>
+                </div>
+                <div class="flex flex-1">
+                    {fillMap.map((v, i) => {
+                        return (
+                            <div class="border-b-lime-200 border-b-2 w-4"></div>
+                        )
+                    })}
+                </div>
+            </div>
+        );
+    })
+
+}

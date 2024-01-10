@@ -1,0 +1,31 @@
+---
+interface Props {
+	experienceList: Experience[];
+}
+interface Experience {
+    date: string;
+    position: String;
+    company: String;
+    location: String;
+    description: String[];
+}
+
+const { experienceList } = Astro.props;
+---
+{
+    experienceList.map((experience) => {
+        return (
+            <div class="">
+                <h2 class="text-4xl">{experience.position}</h2>
+                <p id="date" class="text-lg font-normal">{experience.date}</p>
+                <subtitle class="flex flex-row gap-4 text-xl font-bold text-stone-400">
+                    <p>{experience.company}</p>
+                    <p>{experience.location}</p>
+                </subtitle>
+                <div id="description" class="pl-8 mt-2 mb-6">
+                    {experience.description.map(par=><p class="py-1">{par}</p>)}
+                </div>
+            </div>
+        )})
+
+}
